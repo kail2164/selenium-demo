@@ -1,0 +1,1008 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><!--//- (0)--><!--   //+ Head (0)--><head>
+<!--      //+ Meta (1)-->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--      //- (1)-->
+<!--      //+ Link to font (1)-->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap">
+<!--      //- (1)-->
+<!--      //+ Link to icon (1)-->
+      <link rel="icon" type="image/png" href="/S5/icons/Favicon.png">
+<!--      //- (1)-->
+<!--      //+ Load base css (1)-->
+      <script>
+        function loadBaseCss(){
+           if(document.getElementById('basecss')){
+               return;
+           }
+           var el = document.createElement('link');
+           var uid = Math.floor((Math.random() * 100000) + 1);
+           el.href = '/S5/css/base.css?cssuid_' + uid + '=' + Date.now() + '_' + uid;
+           el.id = 'basecss';
+           el.rel = 'stylesheet';
+           document.getElementsByTagName('head')[0].appendChild(el);
+        }
+        loadBaseCss();
+      </script><link href="/S5/css/base.css?cssuid_89147=1702975549659_89147" id="basecss" rel="stylesheet">
+<!--      //- (1)-->
+<!--      //+ Check browser version (1)-->
+      <script src="/S5/lib/CheckBrowserVersion.js"></script>
+<!--      //- (1)-->
+<!--      //+ Include jquery (1)-->
+      <script type="text/javascript" src="/S5/lib/jquery.js"></script>
+      <script type="text/javascript" src="/S5/lib/jquery.mousewheel.js"></script>
+      <script type="text/javascript" src="/S5/lib/jquery.zclip.js"></script>
+<!--      //- (1)-->
+<!--      //+ Include jquery-ui (1)-->
+      <link rel="stylesheet" href="/S5/lib/jquery-ui/jquery-ui.css">
+      <script src="/S5/lib/jquery-ui/jquery-ui.js"></script>
+<!--      //- (1)-->
+<!--      //+ Include jszip (1)-->
+      <script type="text/javascript" src="/S5/lib/jszip.min.js"></script>
+<!--      //- (1)-->
+<!--      //+ Include highlight.js - TODO: We should find a way to support any language - now it is just javascript and css (1)-->
+      <link rel="stylesheet" href="/S5/lib/highlight/styles/agate.min.css">
+      <script src="/S5/lib/highlight/highlight.js"></script>
+      <script src="/S5/lib/highlight/languages/javascript.min.js"></script>
+      <script src="/S5/lib/highlight/languages/css.min.js"></script>
+<!--      //- (1)-->
+<!--      //+ Include MathJax (1)-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async=""></script>
+<!--      //- (1)-->
+<!--      //+ Include ColorPicker (1)-->
+      <link href="/S5/lib/colorpicker/themes/classic.min.css" rel="stylesheet">
+      <script>
+          var browserinfo = getBrowserInfo(); 
+          if(browserinfo && (browserinfo.Name == 'MSIE' || browserinfo.Name == 'Trident')){
+          }
+          else {
+              var pickrjs = document.createElement('script');
+              pickrjs.src = '/S5/lib/colorpicker/pickr.min.js';
+              document.getElementsByTagName('head')[0].appendChild(pickrjs);
+          }
+      </script><script src="/S5/lib/colorpicker/pickr.min.js"></script>
+<!--      //- (1)-->
+<!--      //+ Include htmldiff (1)-->
+      <script src="/S5/lib/htmldiff.js"></script>
+<!--      //- (1)-->
+<!--      //+ Include fuse (1)-->
+      <script src="/S5/lib/fuse.min.js"></script>
+<!--      //- (1)-->
+<!--      //+ Include FlatPicker (1)-->
+      <link href="/S5/css/flatpickr.min.css" rel="stylesheet">
+      <script src="/S5/lib/flatpickr.js"></script>
+<!--      //- (1)-->
+
+<!--//+ Not used (1)-->
+<!--//- (1)-->
+      <link rel="stylesheet" href="/S5/css/mobile.css">
+   <style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style id="TranslationContribCSS">ins {
+   background-color: #64ff64;
+   text-decoration: none;
+}
+del {
+   background-color: #ff7979;
+   text-decoration: none;
+}
+div.TP {
+   background-color: #f7f7d0;
+}
+div.EP {
+   background-color: #e1f3e1;
+}
+div.IP {
+   background-color: #eadfd9;
+}
+.TranJobLang img {
+   width: 20px;
+}
+img[src="/S5/icons/NotFound.svg"] {
+   width: 20px;
+}
+.error {
+   padding-left: 4px;
+   color: red;
+   font-family: 'Roboto Mono', monospace;
+   font-size: 80%;
+}
+div.document {
+   text-align: left;
+}
+.Extensions > table,
+.Languages > table,
+.Resources > table {
+   text-align: center;
+   
+}
+.Extensions > .Prefix,
+.Languages > .Prefix,
+.Memory > .Prefix,
+.Resources > .Prefix {
+   display: none;
+}
+.Memory > table > tbody {
+   vertical-align: top;
+}
+tr.Toolbar > td {
+   padding: 0px;
+   background-color: #f0f0f0;
+}
+tr.Values > td {
+   background-color: white;
+   text-align: left;
+}
+tr.Values[data-hidden] > td {
+   background-color: inherit;
+}
+tr.Toolbar .paragraph {
+   margin: 0px;
+}
+.CoToolbar > .IET > div.ToolbarButtons {
+   width: auto;
+   margin: 0px;
+}
+.CoToolbar > .IET > div.ToolbarButtons > span.ToolbarButtons {
+   min-width: auto;
+   padding: 0px;
+   border: none;
+   background-color: inherit;
+}
+.CoToolbar > .IET > div.ToolbarButtons > span.ToolbarButtons > .Action {
+   padding: 0px 2px;
+   margin: 4px;
+}
+td.BlockData .CoToolbar > .IET > div.ToolbarButtons > span.ToolbarButtons > .Action {
+   margin: 8px 4px 0px 0px;
+}
+#Frames.IconText .CoToolbar > .IET > div.ToolbarButtons > span.ToolbarButtons > .Action > .Image > span.IconText {
+   margin-top: 2px;
+}
+.CoToolbar.Empty > span > .Tag {
+   display: none;
+}
+.paragraph.Toolbar > .Prefix {
+   display:none;
+}
+.CoToolbar.Button > .IET > div.ToolbarButtons {
+   border: solid gray 1px;
+}
+tr.CurrentText > td {
+   border: 2px solid blue;
+}
+.BlockRow {
+   border-top: 3px solid gray;
+}
+td.AlignCtr {
+   min-width: 30px;
+}
+td.AlignSrcAct {
+   min-width: 60px;
+}
+td.AlignSrcEl {
+   min-width: 80px;
+}
+td.AlignTrgAct {
+   min-width: 60px;
+}
+td.AlignTrgEl {
+   min-width: 80px;
+}
+div.table.Query table table tbody td {
+   padding: 0px 4px;
+}
+div.table.Query table .table {
+   margin: 0px;
+}
+div.table.Query table .table > div {
+   display: none;
+}
+td.Query div.ToolbarButtons > span.ToolbarButtons {
+   min-width: inherit;
+}
+td.Query .InlineControl.CoPrefix .I {
+   min-width: 80px;
+}
+td.Query > .paragraph {
+}
+.TextVersion {
+   margin-left: 6px;
+   background-color: white;
+   border:solid 1px gray;
+   font-size: 80%;
+}
+.TextVersion.Working {
+   background-color: lightgreen;
+}
+.TextVersion > .Prefix {
+   display: none;
+}
+tr.BlockRow,
+tr.TextRow {
+   background-color: #EEEEEE;
+}
+.table.SimilarBlock > table > tbody > tr > td,
+tr.SimilarRow > td,
+tr.SimilarTextRow > td{
+   background-color: #f5e7e0;
+}
+td.BlockData {
+   min-width: 90px;
+}
+td.SimilarData > .paragraph,
+td.BlockData > .paragraph {
+   margin: 0px;
+}
+td.TextData {
+   min-width: 170px;
+}
+td.TargetText {
+   background-color: white;
+}
+.AmbiguityGroup,
+.BlockHint,
+.BlockId,
+.IsReplacing,
+.ReplacedBy,
+.ReplacedWhen,
+.TextComment,
+.TextTime,
+.TextId,
+.UsedBy {
+   font-size: 80%;
+}
+.BlockId:before,
+.TextId:before  {
+   content: "Id: ";
+}
+.BlockId.DummyId,
+.TextId[data-data-textid="-1"] {
+   display: none;
+}  
+.IsReplacing:before {
+   content: "Replace: ";
+}
+.UsedBy:before {
+   content: "Used by: ";
+}
+span.CoDate > * > .Tag,
+span.CoTextfield > * > .Tag {
+   display: none;
+}
+.AmbiguityGroup:before  {
+    font-size: 80%;
+}
+.ReplacedBy:before  {
+    content: "ReplacedBy: ";
+    font-size: 80%;
+}
+.ReplacedWhen:before  {
+    content: "ReplacedWhen: ";
+    font-size: 80%;
+}
+span.Type[data-type="Flexible"]:before {
+   display: none;
+}
+div.BlockTable > table {
+   background-color: #EEEEEE;
+}
+td.TextContent {
+   background-color: white;
+   min-width: 400px;
+}
+td.Conflict {
+   background-color: #f1d0d6;
+   min-width: 400px;
+}
+.OldVersion {
+   display: none;
+}
+.ExButton,
+.ViewAllLangs {
+   font-size: 80%;
+   border: 1px solid gray;
+   padding: 0px 2px;
+   margin-left: 4px;
+   cursor: pointer;
+}
+.ToggleOldVersions {
+   background-color: #d0eeee;
+}
+.ToggleSimilar {
+   background-color: #f5e7e0;
+}
+.UseSimilar {
+   background-color: #99FC99;
+}
+.DeleteTranslation {
+   background-color: #ff8080;
+   display: none;
+}
+.ShowDeleteTranslation .DeleteTranslation {
+   display: inline;
+}
+.ViewAllLangs {
+   background-color: #ADD8E6;
+}
+.OldTextVersions > table > tbody > tr > td {
+   background-color: #d0eeee;
+}
+.OldTextVersions > .Prefix {
+   display: none;
+}
+.TableControl.table.TextTable {
+   margin: 0px;
+}
+.TableControl.table.TextTable > table{
+   border-collapse: separate;
+   border-spacing: 1px;
+}
+.TableControl.table.TextTable > .Prefix {
+   display: none;
+}
+tr[data-data-notinmemory] > .TextData {
+   border: #ab6b6b solid 3px;
+}
+tr > td[data-data-textstatus="12"]{
+   border: red solid 2px;
+}
+tr.Master.Source > .TextData {
+   background-color: #EEEEEE;
+}
+tr.Master > .TextData {
+   background-color: yellow;
+}
+.title > span[data-label="NotApproved"],
+.paragraph[data-label="NotTranslatedTarget"],
+.title > span[data-label="NotTranslatedTarget"] {
+   color: red;
+}
+.paragraph[data-label="NotTranslatedSource"],
+.title > span[data-label="NotTranslatedSource"] {
+   color: red;
+   font-weight: bold;
+}
+.title > span[data-label="Ambis"] {
+   color: red;
+}
+.paragraph[data-label="RejectAmb"],
+.title > span[data-label="RejectAmb"] {
+   color: red;
+   font-weight: bold;
+}
+div.RejAmbBlock {
+   color: red;
+}
+.title > span[data-label="Conflicts"] {
+   background-color: #f1d0d6;
+}
+td.TextData > * {
+   margin: 2px 0px;
+}
+.paragraph.Message {
+   color: red;
+}
+.paragraph .CoToolbar > .IET > .ToolbarButtons > .ToolbarButtons > .Action {
+   margin: 0px 4px;
+}
+td .linkHref {
+   width: inherit !important;
+}
+tr.RejectAmbiguity > td.TextContent {
+   border: solid 3px red;
+}
+.Lang {
+   display: none;
+}
+.Lang.Lang-en,
+.Lang.Lang-nl,
+.Lang.Lang-sl,
+.Lang.Lang-sv,
+.AllLangs .Lang {
+   display: table-row;
+}
+.BlocksCondensed .TextTime,
+.BlocksCondensed .TextId,
+.BlocksCondensed .BlockId,
+.BlocksCondensed .BlockToolbar {
+   display: none;
+}
+div.CoProps > div.Compression > .State {
+   display: none;
+   border: solid 1px gray;
+   height: 17px;
+   width: 17px;
+}
+div.CoProps > div.Compression > .State.Created,
+div.CoProps > div.Compression > .State.Analyzed,
+div.CoProps > div.Compression > .State.Sent,
+div.CoProps > div.Compression > .State.Received,
+div.CoProps > div.Compression > .State.Updated,
+div.CoProps > div.Compression > .State.Closed {
+   display: inline-block;
+}
+.State.Created,
+.Action.StateCreated {
+   background-color: pink;
+}
+.Action.StateCreated > .Image:before {
+   font-size: 11px;
+   content: "Created";
+}
+.State.Analyzed,
+.Action.StateAnalyzed {
+   background-color: yellow;
+}
+.Action.StateAnalyzed > .Image:before {
+   font-size: 11px;
+   content: "Analyzed";
+}
+.State.Sent,
+.Action.StateSent {
+   background-color: #ADD8E6;
+}
+.Action.StateSent > .Image:before {
+   font-size: 11px;
+   content: "Sent";
+}
+.State.Received,
+.Action.StateReceived {
+   background-color: #D2B48C;
+}
+.Action.StateReceived > .Image:before {
+   font-size: 11px;
+   content: "Received";
+}
+.State.Updated,
+.Action.StateUpdated {
+   background-color: limegreen;
+}
+.Action.StateUpdated > .Image:before {
+   font-size: 11px;
+   content: "Updated";
+}
+.State.Closed,
+.Action.StateClosed {
+   background-color: lightgray;
+}
+.Action.StateClosed > .Image:before {
+   font-size: 11px;
+   content: "Closed";
+}</style><title>Orient Orient</title></head>
+<!--   //- (0)-->
+<!--   //+ Body (0)-->
+   <body id="body"><div id="MathJax_Message" style="display: none;"></div>
+<!--      //+ BG (1)-->
+      <div id="BG">
+      </div>
+<!--      //- (1)-->
+<!--      //+ #Busy - showing slow server jobs (1)-->
+      <div id="Busy" class="Hidden" style="position: absolute; left: 864px; top: 130px; z-index: 8; max-height: 300px; background-color: rgb(248, 248, 248); box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 2px; border: 1px solid lightgray; padding: 5px; overflow-y: hidden;"></div>
+<!--      //- (1)-->
+<!--      //+ #ProgressMessage - showing progress (1)-->
+      <div id="ProgressMessage" class="Hidden" style="position: absolute; left: 764px; top: 130px; z-index: 8; max-height: 300px; background-color: rgb(248, 248, 248); box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 2px; border: 1px solid lightgray; padding: 5px;">
+      </div>
+<!--      //- (1)-->
+<!--      //+ #Frames - This is the content (1)-->
+      <div id="Frames" class="Admin IconText">
+         <div class="Object">
+<!--            //+ Breadcrumb + element path (2)-->
+            <div class="ObjOne">
+               <div class="Breadcrumb Expanded"><div class="Collection Breadcrumbs"><span class="BreadcrumbControl"><img src="/S5/icons/ExcosoftLogo.svg"><span class="Name">Orient Orient</span></span><span class="BreadcrumbControl Current"><img src="/S5/icons/Workspace.svg"><span class="Name">Orient</span></span><span class="BreadcrumbControl Go" title="Create a separate view for this Folder"><img src="/S5/icons/Folder.svg"><div class="Version Working">a1</div><span class="Name">001</span></span></div><div class="Collection Actions"></div></div>
+               <div class="Elements"></div>
+            <div class="UserProfile"><div class="Action AspectConfigure Configure"><div class="Image" title="User name: hieu.nguyenkhac@orientsoftware.com
+Profile name: Kail
+Role: Administrator"><img src="/S5/icons/User.svg"><span class="ProfileName">Kail</span><span class="IconText">Configure</span></div></div><div class="Action UserRole" title="Set user role" style="background-color:red;"><div class="Image" style="width:42px;" title="Administrator"><img src="/S5/icons/RoleAdmin.svg" style="width:25px;height:41px;border-radius:2px;"><span class="RoleName"></span><span class="IconText">Role</span></div></div></div></div>
+<!--            //- (2)-->
+<!--            //+ ToolBar + message (2)-->
+            <div class="ObjTwo Edit">
+               <div class="Toolbar"><div class="Collection Buttons u-Float"><div class="ToolbarButtons Skribenta"><span class="ToolbarButtons"><div class="Action ViewOptions" title="Toggle view options"><div class="Image"><img src="/S5/icons/ViewOptions.svg"><span class="IconText">View</span></div></div><div class="FindControl"><div class="Action FindPanel" title="Find on client
+Key: CTRL-f
+F3 = Find next
+CTRL-F3 = Find previous"><div class="Image"><img src="/S5/icons/Search.svg"><span class="IconText">Find</span><span class="Shortcut" data-shortcut="Ctrl+F" title="Keybord shortcut"></span></div></div><div class="ToolbarButtons"><span class="ToolbarButtons"><div class="BlockControl Textfield paragraph FindPara" data-data-in="findPanelText"><span class="IST"><svg class="Tag" width="117.064453125" height="16" style="font-family:Arial; font-size:12pt; font-weight:normal; font-style:normal; text-decoration:none; vertical-align:middle;"><polygon class="Tag" points="1,1 105.064453125,1 114.064453125,8 105.064453125,15 1,15" style="stroke:black; stroke-width:0.5"></polygon><foreignObject class="Tag" x="3" y="0.5" font-family="Arial" font-size="12px" width="117.064453125" height="16" style="text-align:left"><span class="TagSpan" data-text="paragraph Textfield"></span></foreignObject></svg></span><div class="Prefix"><span class="Class" data-class="Textfield"></span></div><span class="IB"><span class="InputControl CoTextfield phrase"><span class="IST"><svg class="Tag" width="114.38671875" height="16" style="font-family:Arial; font-size:12pt; font-weight:normal; font-style:normal; text-decoration:none; vertical-align:middle;"><polygon class="Tag" points="1,1 102.38671875,1 111.38671875,8 102.38671875,15 1,15" style="stroke:black; stroke-width:0.5"></polygon><foreignObject class="Tag" x="3" y="0.5" font-family="Arial" font-size="12px" width="114.38671875" height="16" style="text-align:left"><span class="TagSpan" data-text="phrase CoTextfield"></span></foreignObject></svg></span><span class="I findPanelText"></span><span class="IET"><svg class="Tag" width="115.38671875" height="16" style="font-family:Arial; font-size:12pt; font-weight:normal; font-style:normal; text-decoration:none; vertical-align:middle;"><polygon class="Tag" points="2,8 11,1 112.38671875,1 112.38671875,15 11,15" style="stroke:black; stroke-width:0.5"></polygon><foreignObject class="Tag" x="12" y="0.5" font-family="Arial" font-size="12px" width="115.38671875" height="16" style="text-align:left"><span class="TagSpan" data-text="phrase CoTextfield"></span></foreignObject></svg></span><div class="Action DropDown Expandable" title="Previously input values"><div class="Image"><span class="Awesome" style="font-family:FontAwesome; font-style:normal; font-weight:normal; text-decoration:inherit; color:#333333; font-size:14px;"></span></div></div><div class="RemoveTextButton NotVisible" title="Remove text"><img src="/S5/icons/CloseToolbar.svg" style="width:14px;vertical-align:middle" class="KeymapIcon RemoveText"></div></span></span><span class="IET"><svg class="Tag" width="118.064453125" height="16" style="font-family:Arial; font-size:12pt; font-weight:normal; font-style:normal; text-decoration:none; vertical-align:middle;"><polygon class="Tag" points="2,8 11,1 115.064453125,1 115.064453125,15 11,15" style="stroke:black; stroke-width:0.5"></polygon><foreignObject class="Tag" x="12" y="0.5" font-family="Arial" font-size="12px" width="118.064453125" height="16" style="text-align:left"><span class="TagSpan" data-text="paragraph Textfield"></span></foreignObject></svg></span></div><div class="BlockControl Textfield paragraph ReplacePara Hidden" data-data-in="replaceWith"><span class="IST"><svg class="Tag" width="117.064453125" height="16" style="font-family:Arial; font-size:12pt; font-weight:normal; font-style:normal; text-decoration:none; vertical-align:middle;"><polygon class="Tag" points="1,1 105.064453125,1 114.064453125,8 105.064453125,15 1,15" style="stroke:black; stroke-width:0.5"></polygon><foreignObject class="Tag" x="3" y="0.5" font-family="Arial" font-size="12px" width="117.064453125" height="16" style="text-align:left"><span class="TagSpan" data-text="paragraph Textfield"></span></foreignObject></svg></span><div class="Prefix"><span class="Class" data-class="Textfield"></span></div><span class="IB"><span class="InputControl CoTextfield phrase"><span class="IST"><svg class="Tag" width="114.38671875" height="16" style="font-family:Arial; font-size:12pt; font-weight:normal; font-style:normal; text-decoration:none; vertical-align:middle;"><polygon class="Tag" points="1,1 102.38671875,1 111.38671875,8 102.38671875,15 1,15" style="stroke:black; stroke-width:0.5"></polygon><foreignObject class="Tag" x="3" y="0.5" font-family="Arial" font-size="12px" width="114.38671875" height="16" style="text-align:left"><span class="TagSpan" data-text="phrase CoTextfield"></span></foreignObject></svg></span><span class="I replaceWith"></span><span class="IET"><svg class="Tag" width="115.38671875" height="16" style="font-family:Arial; font-size:12pt; font-weight:normal; font-style:normal; text-decoration:none; vertical-align:middle;"><polygon class="Tag" points="2,8 11,1 112.38671875,1 112.38671875,15 11,15" style="stroke:black; stroke-width:0.5"></polygon><foreignObject class="Tag" x="12" y="0.5" font-family="Arial" font-size="12px" width="115.38671875" height="16" style="text-align:left"><span class="TagSpan" data-text="phrase CoTextfield"></span></foreignObject></svg></span><div class="Action DropDown Expandable" title="Previously input values"><div class="Image"><span class="Awesome" style="font-family:FontAwesome; font-style:normal; font-weight:normal; text-decoration:inherit; color:#333333; font-size:14px;"></span></div></div><div class="RemoveTextButton NotVisible" title="Remove text"><img src="/S5/icons/CloseToolbar.svg" style="width:14px;vertical-align:middle" class="KeymapIcon RemoveText"></div></span></span><span class="IET"><svg class="Tag" width="118.064453125" height="16" style="font-family:Arial; font-size:12pt; font-weight:normal; font-style:normal; text-decoration:none; vertical-align:middle;"><polygon class="Tag" points="2,8 11,1 115.064453125,1 115.064453125,15 11,15" style="stroke:black; stroke-width:0.5"></polygon><foreignObject class="Tag" x="12" y="0.5" font-family="Arial" font-size="12px" width="118.064453125" height="16" style="text-align:left"><span class="TagSpan" data-text="paragraph Textfield"></span></foreignObject></svg></span></div><div class="Action FindForwards SmallButton" title="Find next occurence
+Key: F3"><div class="Image"><span class="IconText">Find</span><span class="Shortcut" data-shortcut="F3" title="Keybord shortcut"></span></div></div><div class="Action FindBackwards SmallButton" title="Toggles the direction for finding between forward and backward
+Key: CTRL-F3"><div class="Image"><img src="/S5/icons/FindBackwards.svg"><span class="Shortcut" data-shortcut="Ctrl+F3" title="Keybord shortcut"></span></div></div><div class="Action FindCaseSensitive SmallButton" title="Find case sensitive"><div class="Image"><img src="/S5/icons/FindCaseSensitive.svg"><span class="IconText">Case</span></div></div><div class="Action FindWholeWord SmallButton" title="Find whole word"><div class="Image"><img src="/S5/icons/FindWholeWord.svg"><span class="IconText">Word</span></div></div><div class="Action FindInAttributes SmallButton" title="Find in attributes"><div class="Image"><img src="/S5/icons/Props.svg"><span class="IconText">Attribute</span></div></div><div class="Action FindFuzzy SmallButton" title="Find approximate"><div class="Image"><img src="/S5/icons/FindSimilar.svg"><span class="IconText">Approximate</span></div></div><div class="Action FindWhat SmallButton" title="Specify what to find"><div class="Image"><img src="/S5/icons/FindType.svg"><span class="IconText">What</span></div></div><div class="Action FindToggleReplace SmallButton" title="Toggle replace"><div class="Image"><img src="/S5/icons/Replace.svg"></div></div><div class="Action Replace SmallButton Hidden" title="Replace and find next"><div class="Image"><span class="IconText">Replace</span></div></div><div class="Action ReplaceAll SmallButton Hidden" title="Replace all occurencies"><div class="Image"><span class="IconText">Replace All</span></div></div><div class="HelpAndClose"></div></span></div></div><div class="Divider BeforeStatus Hidden"></div><div class="Action StatusLockedFile Hidden" title="Indicates if you have locked the file
+Others cannot edit the file as long as you lock it
+If you save the file, it will be unlocked
+Files, untouched for one minute are automatically saved and unlocked" style=""><div class="Image"><img src="/S5/icons/StatusLockFile.svg"><span class="IconText">Locked</span></div></div><div class="Action StatusChangedFile Hidden" title="Saves and unlocks the file
+When you start editing a file, it becomes locked for one minute
+The button has a gray background color if the file is changed and not saved
+Files are automatically saved and unlocked every minute
+Press Shift+F4 to save all files
+Key: CTRL-s" style=""><div class="Image"><img src="/S5/icons/StatusChangeFile.svg"><span class="IconText">Save</span><span class="Shortcut" data-shortcut="Ctrl+S" title="Keybord shortcut"></span></div></div><div class="Action StatusUndo EditMode Hidden" title="Undo previous operation
+Key: CTRL-z" style=""><div class="Image"><img src="/S5/icons/StatusUndo.svg"><span class="IconText">Undo</span><span class="Shortcut" data-shortcut="Ctrl+Z" title="Keybord shortcut"></span></div></div><div class="Action StatusRedo EditMode Hidden" title="Redo previous operation
+Key: CTRL-y" style=""><div class="Image"><img src="/S5/icons/StatusRedo.svg"><span class="IconText">Redo</span><span class="Shortcut" data-shortcut="Ctrl+Y" title="Keybord shortcut"></span></div></div><div class="Divider AfterStatus" style=""></div><div class="Action BlocksTopToolbar Expandable EditMode CommonButton Hidden" title="Create a block element" style=""><div class="Image"><img src="/S5/icons/CreateBlocks.svg"><span class="IconText ExpIcon">Block</span></div></div><div class="Action InlineTopToolbar Expandable EditMode CommonButton Hidden" title="Create an inline element" style=""><div class="Image"><img src="/S5/icons/CreateInside.svg"><span class="IconText ExpIcon">Inline</span></div></div><div class="Action FormatTopToolbar Expandable EditMode Hidden" title="Set the text (character) format" style=""><div class="Image"><img src="/S5/icons/FormatText.svg"><span class="IconText ExpIcon">Format</span></div></div><div class="Action TableRowTopToolbar Expandable EditMode Hidden" title="Table row actions" style=""><div class="Image"><img src="/S5/icons/TableRowAction.svg"><span class="IconText ExpIcon">Row</span></div></div><div class="Action TableColumnTopToolbar Expandable EditMode Hidden" title="Table column actions" style=""><div class="Image"><img src="/S5/icons/TableColumnAction.svg"><span class="IconText ExpIcon">Column</span></div></div><div class="Action TableCellTopToolbar Expandable EditMode Hidden" title="Table cell actions" style=""><div class="Image"><img src="/S5/icons/TableSpanAction.svg"><span class="IconText ExpIcon">Cell</span></div></div><div class="Action QuickTopToolbar Expandable EditMode Hidden" title="Collect your favourite buttons here for quick access
+Right click on a dropdown option and Copy,
+then right click on this button and Paste" style=""><div class="Image"><img src="/S5/icons/User.svg"><span class="IconText ExpIcon">Quick</span></div></div><div class="Action PublicationGroupNewTopToolbar Expandable EditMode Hidden" title="Create a publication group or a publication" style=""><div class="Image"><img src="/S5/icons/Plus.svg"><span class="IconText ExpIcon">New</span></div></div><div class="Action PublicationGroupFindTopToolbar Hidden" title="View total publication tree
+Filter by entering characters" style=""><div class="Image"><img src="/S5/icons/Section.svg"><span class="IconText">Tree</span></div></div><div class="Action FolderNewTopToolbar Expandable EditMode" title="Create a new resource"><div class="Image"><img src="/S5/icons/Plus.svg"><span class="IconText ExpIcon">New</span></div></div><div class="HelpAndClose"></div></span></div></div></div>
+               <div id="Message" class="Visible"></div>
+               <div id="FrameToolbar"><div class="Action FrameButtonAspect FrameButton Visible" title="Open or close the Aspect frame"><div class="Image"><img src="/S5/icons/FrameAspect.svg"><span class="IconText">Aspect</span></div></div><div class="Action FrameButtonTree FrameButton Visible" title="Open or close the Navigation frame"><div class="Image"><img src="/S5/icons/FrameNavigator.svg"><span class="IconText">Nav</span></div></div><div class="Action FrameButtonContent FrameButton" title="Open or close the Content frame"><div class="Image"><img src="/S5/icons/FrameContent.svg"><span class="IconText">Content</span></div></div><div class="Action FrameButtonRight FrameButton" title="Open or close the Tools frame"><div class="Image"><img src="/S5/icons/FrameTools.svg"><span class="IconText">Tools</span></div></div></div>
+            </div>
+<!--            //- (2)-->
+         </div>
+
+         <div class="MobileObject">
+            <div class="MobileActions">
+            </div>
+            <div class="MobileBreadcrumb">
+            </div>
+            <div class="MobileToolbar">
+                  <!-- TODO: remove style if implementing -->
+            </div>
+            <div class="MobileViewChain"></div>
+            <div id="MessagePopup"></div>
+         </div>
+<!--         //+ The 4 frames and the separators in between (2)-->
+         <div id="AspectFrame" class="View Browse Aspect Admin" style="display: block; position: absolute; left: 0px; top: 103.953px; height: 602px; width: 90px;"><div class="Content"><div class="Collection SkribentaObject Expanded"><div class="Action AspectNavigate Navigate"><div class="Image"><img src="/S5/icons/LightHouse.svg"><span class="IconText">Overview</span></div></div><div class="Action AspectPublications Reuse"><div class="Image"><img src="/S5/icons/Publications.svg"><span class="IconText">Publications</span></div></div><div class="Action AspectExplore Explore"><div class="Image"><img src="/S5/icons/Workspace.svg"><span class="IconText">Workspace</span></div></div><div class="Action AspectTranslationProjects TranslationProjects"><div class="Image"><img src="/S5/icons/TranslationGray.svg"><span class="IconText">Translation</span></div></div><div class="Action AspectSearch Search"><div class="Image"><img src="/S5/icons/Search.svg"><span class="IconText">Search</span></div></div><div class="Action AspectHelp Help"><div class="Image"><img src="/S5/icons/HelpY.svg"><span class="IconText">Help</span></div></div><div class="Action AspectCustomize Customize"><div class="Image"><img src="/S5/icons/CustomizeAspect.svg"><span class="IconText">Customize</span></div></div><div class="Action AspectAdministration Administration"><div class="Image"><img src="/S5/icons/Administration.svg"><span class="IconText">Administration</span></div></div></div></div></div>
+         <div id="Sep"></div>
+         <div id="TreeFrame" class="View Tree Edit CurrentFrame" style="display: block; position: absolute; left: 92px; top: 103.953px; height: 602px; width: 1164px;"><div class="TabView" style="width: 1164px;"><div class="TabItem 1702975550816280 active" title="Workspace"><span class="Icon MoveIcon"><img class="MoveIcon" width="16px" src="/S5/icons/Workspace.svg"></span><span class="TabItemText">Workspace</span><span class="TabClose" title="Close tab (Ctrl+Q)"><img class="TabClose" width="14px" src="/S5/icons/CloseToolbar.svg"></span></div><div class="TabItem DropDown"><span class="TabDropDown TabMore" title="Select tab and rearrange them"><img class="TabMore" width="14px" src="/S5/icons/FindForwards.svg"></span></div></div><div class="Content Folder" style="width: 1164px; height: 574px;"><div class="ViewControl Expanded"><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Files"></div><div class="Icon FilesIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a1</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>Orient</span></div></div><div class="Expansion"><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand FolderReference"></div><div class="Icon FolderReferenceIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a1</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>CIP</span></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand FolderReference"></div><div class="Icon FolderReferenceIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion HasCheckedOutChild" title="Open version tree">a6</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>Customize</span></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand FolderReference"></div><div class="Icon FolderReferenceIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Frozen" title="Open version tree">a1</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>Icons</span></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand FolderReference"></div><div class="Icon FolderReferenceIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a45</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>Manuals</span></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand FolderReference"></div><div class="Icon FolderReferenceIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a266</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>S5</span></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand FolderReference"></div><div class="Icon FolderReferenceIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Frozen" title="Open version tree">a2</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>Testing</span></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand FolderReference"></div><div class="Icon FolderReferenceIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Frozen" title="Open version tree">a3</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>TestingPdf</span></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand FolderReference"></div><div class="Icon FolderReferenceIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion HasCheckedOutChild" title="Open version tree">a6</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>Web</span></div></div></div><div class="CoProps HasExp Expanded" id="BrowseCursor"><div class="Compression"><div class="PlusMinus HasExp" title="Compress Folder"></div><div class="Icon FolderIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a1</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>001</span></div></div><div class="Expansion"><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Folder"></div><div class="Icon FolderIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a1</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>001a</span></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Folder"></div><div class="Icon FolderIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a1</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>highest</span></div></div></div><div class="CoProps File HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Master"></div><div class="Icon MasterIcon KeymapIcon" title="Open toolbar"><img width="20px" src="/S5/icons/Master.svg"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a1</div><div class="Flag KeymapFlag"><img class="lang" src="/S5/flags/flag-en.svg" title="English (U.K.)"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>1a.xml</span></div></div></div><div class="CoProps File HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Master"></div><div class="Icon MasterIcon KeymapIcon" title="Open toolbar"><img width="20px" src="/S5/icons/Master.svg"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a2</div><div class="Flag KeymapFlag"><img class="lang" src="/S5/flags/flag-en.svg" title="English (U.K.)"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>11a.xml</span></div></div></div><div class="CoProps File HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Master"></div><div class="Icon MasterIcon KeymapIcon" title="Open toolbar"><img width="20px" src="/S5/icons/Master.svg"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a1</div><div class="Flag KeymapFlag"><img class="lang" src="/S5/flags/flag-en.svg" title="English (U.K.)"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>22.xml</span></div></div></div><div class="CoProps File HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Master"></div><div class="Icon MasterIcon KeymapIcon" title="Open toolbar"><img width="20px" src="/S5/icons/Master.svg"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a3</div><div class="Flag KeymapFlag"><img class="lang" src="/S5/flags/flag-en.svg" title="English (U.K.)"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>794.xml</span></div></div></div><div class="CoProps File HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Master"></div><div class="Icon MasterIcon KeymapIcon" title="Open toolbar"><img width="20px" src="/S5/icons/Master.svg"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a6</div><div class="Flag KeymapFlag"><img class="lang" src="/S5/flags/flag-en.svg" title="English (U.K.)"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>11111.xml</span></div></div></div><div class="CoProps File HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Recipe"></div><div class="Icon RecipeIcon KeymapIcon" title="Open toolbar"><img width="20px" src="/S5/icons/Recipe.svg"></div><div class="Image"></div><div class="Version KeymapVersion Frozen" title="Open version tree">a1</div><div class="Flag KeymapFlag"><img class="lang" src="/S5/flags/flag-en.svg" title="English (U.K.)"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>12313213.rcp</span></div></div></div><div class="CoProps File HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand File"></div><div class="Icon FileIcon KeymapIcon" title="Open toolbar"><img width="20px" src="/S5/icons/File.svg"></div><div class="Image"></div><div class="Version KeymapVersion Frozen" title="Open version tree">a2</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>a Copy 1.txt</span></div></div></div><div class="CoProps File HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Master"></div><div class="Icon MasterIcon KeymapIcon" title="Open toolbar"><img width="20px" src="/S5/icons/Master.svg"></div><div class="Image"></div><div class="Version KeymapVersion Frozen" title="Open version tree">a1</div><div class="Flag KeymapFlag"><img class="lang" src="/S5/flags/flag-en.svg" title="English (U.K.)"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>ab.xml</span></div></div></div><div class="CoProps File HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Recipe"></div><div class="Icon RecipeIcon KeymapIcon" title="Open toolbar"><img width="20px" src="/S5/icons/Recipe.svg"></div><div class="Image"></div><div class="Version KeymapVersion Frozen" title="Open version tree">a1</div><div class="Flag KeymapFlag"><img class="lang" src="/S5/flags/flag-en.svg" title="English (U.K.)"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>asdasd.rcp</span></div></div></div><div class="CoProps File HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Master"></div><div class="Icon MasterIcon KeymapIcon" title="Open toolbar"><img width="20px" src="/S5/icons/Master.svg"></div><div class="Image"></div><div class="Version KeymapVersion Frozen" title="Open version tree">a2</div><div class="Flag KeymapFlag"><img class="lang" src="/S5/flags/flag-en.svg" title="English (U.K.)"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>B.xml</span></div></div></div><div class="CoProps File HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Master"></div><div class="Icon MasterIcon KeymapIcon" title="Open toolbar"><img width="20px" src="/S5/icons/Master.svg"></div><div class="Image"></div><div class="Version KeymapVersion Frozen" title="Open version tree">a1</div><div class="Flag KeymapFlag"><img class="lang" src="/S5/flags/flag-en.svg" title="English (U.K.)"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>DevNotes.xml</span></div></div></div><div class="CoProps File HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Master"></div><div class="Icon MasterIcon KeymapIcon" title="Open toolbar"><img width="20px" src="/S5/icons/Master.svg"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a1</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>Edit.jsx</span></div></div></div><div class="CoProps File HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Master"></div><div class="Icon MasterIcon KeymapIcon" title="Open toolbar"><img width="20px" src="/S5/icons/Master.svg"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a1</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>Edit.xml</span></div></div></div><div class="CoProps File HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Recipe"></div><div class="Icon RecipeIcon KeymapIcon" title="Open toolbar"><img width="20px" src="/S5/icons/Recipe.svg"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a1</div><div class="Flag KeymapFlag"><img class="lang" src="/S5/flags/flag-en.svg" title="English (U.K.)"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>HieuTest.rcp</span></div></div></div><div class="CoProps File HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Master"></div><div class="Icon MasterIcon KeymapIcon" title="Open toolbar"><img width="20px" src="/S5/icons/Master.svg"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a1</div><div class="Flag KeymapFlag"><img class="lang" src="/S5/flags/flag-en.svg" title="English (U.K.)"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>selenium.xml</span></div></div></div><div class="CoProps File HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Master"></div><div class="Icon MasterIcon KeymapIcon" title="Open toolbar"><img width="20px" src="/S5/icons/Master.svg"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a1</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>Split-test.jsx</span></div></div></div><div class="CoProps File HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Recipe"></div><div class="Icon RecipeIcon KeymapIcon" title="Open toolbar"><img width="20px" src="/S5/icons/Recipe.svg"></div><div class="Image"></div><div class="Version KeymapVersion Frozen" title="Open version tree">a1</div><div class="Flag KeymapFlag"><img class="lang" src="/S5/flags/flag-en.svg" title="English (U.K.)"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>test.rcp</span></div></div></div><div class="CoProps File HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Master"></div><div class="Icon MasterIcon KeymapIcon" title="Open toolbar"><img width="20px" src="/S5/icons/Master.svg"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a1</div><div class="Flag KeymapFlag"><img class="lang" src="/S5/flags/flag-en.svg" title="English (U.K.)"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>testt.xml</span></div></div></div><div class="CoProps File HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Recipe"></div><div class="Icon RecipeIcon KeymapIcon" title="Open toolbar"><img width="20px" src="/S5/icons/Recipe.svg"></div><div class="Image"></div><div class="Version KeymapVersion Frozen" title="Open version tree">a2</div><div class="Flag KeymapFlag"><img class="lang" src="/S5/flags/flag-en.svg" title="English (U.K.)"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>tttt.rcp</span></div></div></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Folder"></div><div class="Icon FolderIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a1</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>aaa</span></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Folder"></div><div class="Icon FolderIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a3</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>All languages</span></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Folder"></div><div class="Icon FolderIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a1</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>bbb</span></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Folder"></div><div class="Icon FolderIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a2</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>Bugs Images</span></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Folder"></div><div class="Icon FolderIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Frozen" title="Open version tree">a1</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>Customers</span></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Folder"></div><div class="Icon FolderIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a2</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>Develop</span></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Folder"></div><div class="Icon FolderIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a2</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>Ebooks</span></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Folder"></div><div class="Icon FolderIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a1</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>ExcosoftWebProject</span></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Folder"></div><div class="Icon FolderIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a5</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>Images</span></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Folder"></div><div class="Icon FolderIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a2</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>Right</span></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Folder"></div><div class="Icon FolderIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a9</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>S5 Quan</span></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Folder"></div><div class="Icon FolderIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a1</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>Staff</span></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Folder"></div><div class="Icon FolderIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a2</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>Test357</span></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Folder"></div><div class="Icon FolderIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a1</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>Test export and upload</span></div></div></div><div class="CoProps HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Folder"></div><div class="Icon FolderIcon KeymapIcon" title="Open toolbar"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a2</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>Testing</span></div></div></div><div class="CoProps File HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Master"></div><div class="Icon MasterIcon KeymapIcon" title="Open toolbar"><img width="20px" src="/S5/icons/Master.svg"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a1</div><div class="Flag KeymapFlag"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>Overview Copy 1.xml</span></div></div></div><div class="CoProps File HasExp"><div class="Compression"><div class="PlusMinus HasExp" title="Expand Master"></div><div class="Icon MasterIcon KeymapIcon" title="Open toolbar"><img width="20px" src="/S5/icons/LightHouse.svg"></div><div class="Image"></div><div class="Version KeymapVersion Working" title="Open version tree">a4</div><div class="Flag KeymapFlag"><img class="lang" src="/S5/flags/flag-en.svg" title="English (U.K.)"></div><div class="State"></div><div class="Name KeymapCoPropsName"><span>Overview.xml</span></div></div></div></div></div></div></div></div>
+         <div id="FileSep" style="display: block; position: absolute; left: 1256px; top: 103.953px; height: 603px; width: 4px; cursor: w-resize;"></div>
+         <div id="ContentFrame" class="View TreeFile Edit Empty Hidden" style="display: none;"></div>
+         <div id="RightSep" style="display: block; position: absolute; left: 1265px; top: 103.953px; height: 603px; width: 4px; cursor: w-resize;"></div>
+         <div id="RightFrame" class="RightFrame Hidden" style="display: none;"><div class="Content" style="width: 0px; height: 0px;"><div id="HelpTab" class="tabcontent" style="display: none;"><iframe src="https://docs.skribenta.com?v.version=5.6"></iframe></div><div id="ToolsTab" class="tabcontent active" style="display: block;"><div id="UsefulInfo" style="display: none;">Resource = Folder<br>id = 268435 ix = 268438</div></div><div id="PropertiesTab" class="tabcontent" style="display: none;"></div></div></div>
+<!--         //- (2)-->
+<!--         //+ The floating PinView (2)-->
+         <div id="Pinned"></div>
+<!--         //- (2)-->
+<!--         //+ The masking for mobile floating menus (2)-->
+         <div id="Mask"></div>
+<!--         //- (2)-->
+      </div>
+<!--      //- (1)-->
+<!--      //+ #MobileKeyboard - The mobile keyboard (1)-->
+      <div id="MobileKeyboard" class="Hidden" style="position:fixed;left:100px;bottom:0;z-index:99999;">
+        <button id="openMobileKeyboard">Keyboard</button>
+        <input id="hiddenInput" style="visibility: hidden;width:10px;">
+      </div>
+<!--      //- (1)-->
+<!--      //+ #Cursor - This is the cursor in Edit mode (1)-->
+      <div id="Cursor" style="display:none;" class="Hidden" scrollpos_31920_1="0_0_1" scrollpos_32554_1="0_0_1">
+         <svg>
+           <polygon></polygon>
+           <line></line>
+           <ellipse></ellipse>
+         </svg>
+      </div>
+<!--      //- (1)-->
+<!--      //+ #ImageEar - The little circle at the top right corner of an image in Edit mode for resize (1)-->
+      <div id="ImageEar" style="display:none;"></div>
+<!--      //- (1)-->
+<!--      //+ #CellLeft - The arrow down on the left current column border for resize left and current column (1)-->
+      <div id="CellLeft" style="display:none;"></div>
+<!--      //- (1)-->
+<!--      //+ #CellRight - The arrow down on the right current column border for resize current and right column (1)-->
+      <div id="CellRight" style="display:none;"></div>
+<!--      //- (1)-->
+<!--      //+ #a - This is for simulating a click on a link - see Server.downloadFile (1)-->
+      <a id="a"></a>
+<!--      //- (1)-->
+<!--      //+ #Login - If the user needs to log in again due to inactivity towards server (1)-->
+      <div id="Login"></div>
+<!--      //- (1)-->
+<!--      //+ #Hover (1)-->
+      <div id="Hover" class="Hidden" style="border:lightgray solid 1px;background-color:#E8E8E8;width:fit-content;height:18px;position:absolute">
+      </div>
+<!--      //- (1)-->
+<!--      //+ Javascript (1)-->
+<!--      //+ Include all js modules »AllModules (2)-->
+<!--      //+ This must be first (3)-->
+      <script src="/S5/js/static/M.js"></script>
+<!--      //- (3)-->
+<!--      //+ These must be before the others because thay are used in constructors below. Remember to update basicModules in S5Lowest! (3)-->
+      <script src="/S5/js/utils/Enum.js"></script>
+      <script src="/S5/js/model/ObjNode.js"></script>
+      <script src="/S5/js/views/View.js"></script>
+      <script src="/S5/js/model/ObjCollection.js"></script>
+      <script src="/S5/js/model/FlexNode.js"></script>
+      <script src="/S5/js/model/FlexElement.js"></script>
+      <script src="/S5/js/control/Control.js"></script>
+      <script src="/S5/js/objects/CoObject.js"></script>
+      <script src="/S5/js/objects/ResourceObject.js"></script>
+      <script src="/S5/js/objects/FolderResource.js"></script>
+      <script src="/S5/js/customize/Buttons.js"></script>
+<!--      //- (3)-->
+
+<!--      //+ administration (3)-->
+      <script src="/S5/js/administration/ResourceGarbage.js"></script>
+      <script src="/S5/js/administration/ResourceGarbages.js"></script>
+      <script src="/S5/js/administration/ResourceVersion.js"></script>
+      <script src="/S5/js/administration/DatabaseManager.js"></script>
+      <script src="/S5/js/administration/ServerManager.js"></script>
+      <script src="/S5/js/administration/User.js"></script>
+      <script src="/S5/js/administration/UserManager.js"></script>
+      <script src="/S5/js/administration/WorkspaceManager.js"></script>
+<!--      //- (3)-->
+<!--      //+ callout (3)-->
+      <script src="/S5/js/callout/ImageCropper.js"></script>
+      <script src="/S5/js/callout/MathUtils.js"></script>
+      <script src="/S5/js/callout/SelectionHandler.js"></script>
+      <script src="/S5/js/callout/ShapeUtils.js"></script>
+<!--      //- (3)-->
+<!--      //+ control (3)-->
+      <script src="/S5/js/control/ActionControl.js"></script>
+      <script src="/S5/js/control/AspectControl.js"></script>
+      <script src="/S5/js/control/BlockControl.js"></script>
+      <script src="/S5/js/control/BreadcrumbControl.js"></script>
+      <script src="/S5/js/control/BridgeControl.js"></script>
+      <script src="/S5/js/control/ButtonControl.js"></script>
+      <script src="/S5/js/control/CoChildrenControl.js"></script>
+      <script src="/S5/js/control/CollectionControl.js"></script>
+      <script src="/S5/js/control/ColorControl.js"></script>
+      <script src="/S5/js/control/CoPropsControl.js"></script>
+      <script src="/S5/js/control/DivControl.js"></script>
+      <script src="/S5/js/control/DocumentControl.js"></script>
+      <script src="/S5/js/control/DrawingControl.js"></script>
+      <script src="/S5/js/control/DropDownControl.js"></script>
+      <script src="/S5/js/control/FileControl.js"></script>
+      <script src="/S5/js/control/FindControl.js"></script>
+      <script src="/S5/js/control/FloatPanelControl.js"></script>
+      <script src="/S5/js/control/FormulaControl.js"></script>
+      <script src="/S5/js/control/FrameControl.js"></script>
+      <script src="/S5/js/control/FrameManagerControl.js"></script>
+      <script src="/S5/js/control/GroupUserControl.js"></script>
+      <script src="/S5/js/control/HelpManagerControl.js"></script>
+      <script src="/S5/js/control/HelpTopicControl.js"></script>
+      <script src="/S5/js/control/HrefControl.js"></script>
+      <script src="/S5/js/control/HtmlControl.js"></script>
+      <script src="/S5/js/control/ImageControl.js"></script>
+      <script src="/S5/js/control/InfoControl.js"></script>
+      <script src="/S5/js/control/InlineControl.js"></script>
+      <script src="/S5/js/control/InputControl.js"></script>
+      <script src="/S5/js/control/ListControl.js"></script>
+      <script src="/S5/js/control/ListItemControl.js"></script>
+      <script src="/S5/js/control/ObjectControl.js"></script>
+      <script src="/S5/js/control/OptionControl.js"></script>
+      <script src="/S5/js/control/PanelTitleControl.js"></script>
+      <script src="/S5/js/control/PointControl.js"></script>
+      <script src="/S5/js/control/PopupControl.js"></script>
+      <script src="/S5/js/control/PublicationManagerControl.js"></script>
+      <script src="/S5/js/control/PublicationPreviewControl.js"></script>
+      <script src="/S5/js/control/PublishFileControl.js"></script>
+      <script src="/S5/js/control/RightFramePathControl.js"></script>
+      <script src="/S5/js/control/RightFramePropsControl.js"></script>
+      <script src="/S5/js/control/SearchHitControl.js"></script>
+      <script src="/S5/js/control/SearchHitsEndControl.js"></script>
+      <script src="/S5/js/control/ShapeControl.js"></script>
+      <script src="/S5/js/control/SkribentaAspectControl.js"></script>
+      <script src="/S5/js/control/TableBodyControl.js"></script>
+      <script src="/S5/js/control/TableCaptionControl.js"></script>
+      <script src="/S5/js/control/TableCellControl.js"></script>
+      <script src="/S5/js/control/TableColControl.js"></script>
+      <script src="/S5/js/control/TableControl.js"></script>
+      <script src="/S5/js/control/TableFootControl.js"></script>
+      <script src="/S5/js/control/TableHeadControl.js"></script>
+      <script src="/S5/js/control/TableRowControl.js"></script>
+      <script src="/S5/js/control/TextControl.js"></script>
+      <script src="/S5/js/control/TitleControl.js"></script>
+      <script src="/S5/js/control/ToolbarActionControl.js"></script>
+      <script src="/S5/js/control/ToolbarControl.js"></script>
+      <script src="/S5/js/control/TopButtonControl.js"></script>
+      <script src="/S5/js/control/TopControl.js"></script>
+      <script src="/S5/js/control/TPControl.js"></script>
+      <script src="/S5/js/control/TreeNodeControl.js"></script>
+      <script src="/S5/js/control/UserControl.js"></script>
+      <script src="/S5/js/control/ValueControl.js"></script>
+      <script src="/S5/js/control/VariableControl.js"></script>
+      <script src="/S5/js/control/VariablesControl.js"></script>
+      <script src="/S5/js/control/VideoControl.js"></script>
+      <script src="/S5/js/control/ViewControl.js"></script>
+      <script src="/S5/js/control/WrapperControl.js"></script>
+       <script src="/S5/js/control/WorkspaceControl.js"></script>
+      <script src="/S5/js/control/TopPinningUpToolbarControl.js"></script>
+
+      <script src="/S5/js/control/ControlFactory.js"></script>
+<!--      //- (3)-->
+<!--      //+ customize (3)-->
+      <script src="/S5/js/customize/Access.js"></script>
+      <script src="/S5/js/customize/Functions.js"></script>
+      <script src="/S5/js/customize/Icons.js"></script>
+      <script src="/S5/js/customize/Keys.js"></script>
+      <script src="/S5/js/customize/Objects.js"></script>
+      <script src="/S5/js/customize/Panels.js"></script>
+      <script src="/S5/js/customize/S.js"></script>
+<!--      //- (3)-->
+<!--      //+ edit (3)-->
+      <script src="/S5/js/edit/ChangeCase.js"></script>
+      <script src="/S5/js/edit/Clipboard.js"></script>
+      <script src="/S5/js/edit/Create.js"></script>
+      <script src="/S5/js/edit/CutCopyRemove.js"></script>
+      <script src="/S5/js/edit/Edit.js"></script>
+      <script src="/S5/js/edit/EditUtils.js"></script>
+      <script src="/S5/js/edit/GoodPlace.js"></script>
+      <script src="/S5/js/edit/Hide.js"></script>
+      <script src="/S5/js/edit/InsertText.js"></script>
+      <script src="/S5/js/edit/Markup.js"></script>
+      <script src="/S5/js/edit/Move.js"></script>
+      <script src="/S5/js/edit/Paste.js"></script>
+      <script src="/S5/js/edit/Split.js"></script>
+      <script src="/S5/js/edit/Wrap.js"></script>
+<!--      //- (3)-->
+<!--      //+ files (3)-->
+      <script src="/S5/js/files/CM.js"></script>
+      <script src="/S5/js/files/File.js"></script>
+      <script src="/S5/js/files/FileManager.js"></script>
+      <script src="/S5/js/files/FileProperties.js"></script>
+      <script src="/S5/js/files/FileReview.js"></script>
+      <script src="/S5/js/files/FileSkribenta.js"></script>
+      <script src="/S5/js/files/FileWindows.js"></script>
+      <script src="/S5/js/files/FlexParser.js"></script>
+      <script src="/S5/js/files/SAXParser.js"></script>
+      <script src="/S5/js/files/ReviewManager.js"></script>
+<!--      //- (3)-->
+<!--      //+ find (3)-->
+      <script src="/S5/js/find/Compress.js"></script>
+      <script src="/S5/js/find/Expand.js"></script>
+      <script src="/S5/js/find/Find.js"></script>
+      <script src="/S5/js/find/FindPanel.js"></script>
+      <script src="/S5/js/find/FindPanelView.js"></script>
+      <script src="/S5/js/find/FindText.js"></script>
+      <script src="/S5/js/find/FindVertical.js"></script>
+      <script src="/S5/js/find/Search.js"></script>
+<!--      //- (3)-->
+<!--      //+ frames (3)-->
+      <script src="/S5/js/frames/FrameManager.js"></script>
+      <script src="/S5/js/frames/Iframe.js"></script>
+      <script src="/S5/js/frames/TabManager.js"></script>
+<!--      //- (3)-->
+<!--      //+ geometry (3)-->
+      <script src="/S5/js/geometry/Rect.js"></script>
+<!--      //- (3)-->
+<!--      //+ help (3)-->
+      <script src="/S5/js/help/HelpManager.js"></script>
+      <script src="/S5/js/help/HelpTopic.js"></script>
+<!--      //- (3)-->
+<!--      //+ inputs (3)-->
+      <script src="/S5/js/inputs/CoRange.js"></script>
+<!--      //- (3)-->
+<!--      //+ language (3)-->
+      <script src="/S5/js/language/SpellCheck.js"></script>
+<!--      //- (3)-->
+<!--      //+ model (3)-->
+      <script src="/S5/js/model/Div.js"></script>
+      <script src="/S5/js/model/FlexDocument.js"></script>
+      <script src="/S5/js/model/FlexText.js"></script>
+      <script src="/S5/js/model/Drawing.js"></script>
+      <script src="/S5/js/model/ShapeImage.js"></script>
+      <script src="/S5/js/model/ShapeLine.js"></script>
+      <script src="/S5/js/model/ShapePoint.js"></script>
+      <script src="/S5/js/model/ShapeRect.js"></script>
+      <script src="/S5/js/model/ShapeArrow.js"></script>
+      <script src="/S5/js/model/ShapeTriangle.js"></script>
+<!--      //- (3)-->
+<!--      //+ objects (3)-->
+      <script src="/S5/js/objects/BreadcrumbObject.js"></script>
+      <script src="/S5/js/objects/ButtonObject.js"></script>
+      <script src="/S5/js/objects/FileContent.js"></script>
+      <script src="/S5/js/objects/FileResource.js"></script>
+      <script src="/S5/js/objects/FlexResource.js"></script>
+      <script src="/S5/js/objects/LocalObject.js"></script>
+      <script src="/S5/js/objects/ObjectManager.js"></script>
+      <script src="/S5/js/objects/SlideShowObject.js"></script>
+      <script src="/S5/js/objects/TreeNode.js"></script>
+      <script src="/S5/js/objects/VariableObject.js"></script>
+      <script src="/S5/js/objects/WebResource.js"></script>
+      <script src="/S5/js/objects/WikiManager.js"></script>
+<!--      //- (3)-->
+<!--      //+ panels (3)-->
+      <script src="/S5/js/panels/Action.js"></script>
+      <script src="/S5/js/panels/DropDown.js"></script>
+      <script src="/S5/js/panels/FloatPanel.js"></script>
+      <script src="/S5/js/panels/ItemDef.js"></script>
+      <script src="/S5/js/panels/Option.js"></script>
+      <script src="/S5/js/panels/Panel.js"></script>
+      <script src="/S5/js/panels/PanelManager.js"></script>
+      <script src="/S5/js/panels/PanelTitle.js"></script>
+      <script src="/S5/js/panels/RightFrame.js"></script>
+<!--      //- (3)-->
+<!--      //+ position (3)-->
+      <script src="/S5/js/position/Caret.js"></script>
+      <script src="/S5/js/position/DomPosition.js"></script>
+      <script src="/S5/js/position/Highlight.js"></script>
+      <script src="/S5/js/position/Position.js"></script>
+      <script src="/S5/js/position/PosPair.js"></script>
+      <script src="/S5/js/position/Selection.js"></script>
+<!--      //- (3)-->
+<!--      //+ process (3)-->
+      <script src="/S5/js/process/CheckBrowserVersion.js"></script>
+      <script src="/S5/js/process/CoError.js"></script>
+      <script src="/S5/js/process/Event.js"></script>
+      <script src="/S5/js/process/Execute.js"></script>
+      <script src="/S5/js/process/Status.js"></script>
+<!--      //- (3)-->
+<!--      //+ programming (3)-->
+      <script src="/S5/js/programming/Prog.js"></script>
+<!--      //- (3)-->
+<!--      //+ publications (3)-->
+      <script src="/S5/js/publications/Publication.js"></script>
+      <script src="/S5/js/publications/PublicationGroup.js"></script>
+      <script src="/S5/js/publications/PublicationManager.js"></script>
+      <script src="/S5/js/publications/PublicationTreeManager.js"></script>
+      <script src="/S5/js/publications/PublicationPreview.js"></script>
+<!--      //- (3)-->
+<!--      //+ publish (3)-->
+      <script src="/S5/js/publish/PublishJob.js"></script>
+      <script src="/S5/js/publish/PublishManager.js"></script>
+<!--      //- (3)-->
+<!--      //+ search (3)-->
+      <script src="/S5/js/search/SearchHit.js"></script>
+      <script src="/S5/js/search/SearchHitsEnd.js"></script>
+      <script src="/S5/js/search/SearchManager.js"></script>
+<!--      //- (3)-->
+<!--      //+ server (Server must be before LnsServer) (3)-->
+      <script src="/S5/js/server/Server.js"></script>
+      <script src="/S5/js/server/LnsServer.js"></script>
+<!--      //- (3)-->
+<!--      //+ skribenta (3)-->
+      <script src="/S5/js/skribenta/SkribentaAdministration.js"></script>
+      <script src="/S5/js/skribenta/SkribentaAspect.js"></script>
+      <script src="/S5/js/skribenta/SkribentaConfigure.js"></script>
+      <script src="/S5/js/skribenta/SkribentaCustomize.js"></script>
+      <script src="/S5/js/skribenta/SkribentaObject.js"></script>
+      <script src="/S5/js/skribenta/SkribentaExternalTools.js"></script>
+<!--      //- (3)-->
+<!--      //+ static (3)-->
+      <script src="/S5/js/static/C.js"></script>
+      <script src="/S5/js/static/E.js"></script>
+<!--      //- (3)-->
+<!--      //+ style (3)-->
+      <script src="/S5/js/style/CalloutStyle.js"></script>
+      <script src="/S5/js/style/FlexStyle.js"></script>
+      <script src="/S5/js/style/HtmlStyle.js"></script>
+      <script src="/S5/js/style/NodeStyle.js"></script>
+<!--      //- (3)-->
+<!--      //+ table (3)-->
+      <script src="/S5/js/table/Table.js"></script>
+      <script src="/S5/js/table/TableMatrix.js"></script>
+      <script src="/S5/js/table/TableManager.js"></script>
+<!--      //- (3)-->
+<!--      //+ toolbars (3)-->
+      <script src="/S5/js/toolbars/Toolbar.js"></script>
+      <script src="/S5/js/toolbars/ToolbarAction.js"></script>
+      <script src="/S5/js/toolbars/ToolbarManager.js"></script>
+<!--      //- (3)-->
+<!--      //+ translation (3)-->
+      <script src="/S5/js/translation/Memory.js"></script>
+      <script src="/S5/js/translation/MemoryObject.js"></script>
+      <script src="/S5/js/translation/TPManager.js"></script>
+<!--      //- (3)-->
+      <script src="/S5/js/static/MobileManager.js"></script>
+<!--      //+ undo (3)-->
+      <script src="/S5/js/undo/AtomicCommand.js"></script>
+      <script src="/S5/js/undo/CommandStack.js"></script>
+      <script src="/S5/js/undo/FindBeforePosition.js"></script>
+      <script src="/S5/js/undo/InsertAndRemoveChildAtom.js"></script>
+      <script src="/S5/js/undo/InsertAndRemoveTextAtom.js"></script>
+      <script src="/S5/js/undo/RenameElementAtom.js"></script>
+      <script src="/S5/js/undo/SetAndRemoveAttributeAtom.js"></script>
+<!--      //- (3)-->
+<!--      //+ utils (3)-->
+      <script src="/S5/js/utils/ControlUtils.js"></script>
+      <script src="/S5/js/utils/Enum.js"></script>
+      <script src="/S5/js/utils/FlexUtils.js"></script>
+      <script src="/S5/js/utils/KeyUtils.js"></script>
+      <script src="/S5/js/utils/TagUtils.js"></script>
+      <script src="/S5/js/utils/Utils.js"></script>
+      <script src="/S5/js/utils/StringDiff.js"></script>
+<!--      //- (3)-->
+<!--      //+ views (3)-->
+      <script src="/S5/js/views/BreadcrumbView.js"></script>
+      <script src="/S5/js/views/ContentView.js"></script>
+      <script src="/S5/js/views/DropDownView.js"></script>
+      <script src="/S5/js/views/FloatingView.js"></script>
+      <script src="/S5/js/views/ToolView.js"></script>
+      <script src="/S5/js/views/MobileHeaderView.js"></script>
+      <script src="/S5/js/views/RightView.js"></script>
+      <script src="/S5/js/views/ToolbarView.js"></script>
+      <script src="/S5/js/views/PinView.js"></script>
+      <script src="/S5/js/views/Preview.js"></script>
+      <script src="/S5/js/views/ViewManager.js"></script>
+<!--      //- (3)-->
+
+<!--      //+ This must be last (3)-->
+      <script src="/S5/js/static/Manager.js"></script>
+<!--      //- (3)-->
+<!--      //- (2)-->
+<!--//H <section hidden='hidden' id='OneModule'><title>      The m modules is first initiated, then some other basic modules, then all other modules and finally the Manager module - the init() method starts everything</title><section><title>      Load s5 js</title><paragraph> &lt;script&gt;</paragraph><paragraph>      function loadS5JS(){</paragraph><paragraph>         if(document.getElementById(&apos;s5js&apos;)){</paragraph><paragraph>             return;</paragraph><paragraph>         }</paragraph><paragraph>         var s5js = document.createElement(&apos;script&apos;);</paragraph><paragraph>         var uid = Math.floor((Math.random() * 100000) + 1);</paragraph><paragraph>         s5js.src = &apos;/S5/lib/s5.js?jsuid_&apos; + uid + &apos;=&apos; + Date.now() + &apos;_&apos; + uid;</paragraph><paragraph>         s5js.id = &apos;s5js&apos;;</paragraph><paragraph>         document.getElementById(&apos;body&apos;).appendChild(s5js);</paragraph><paragraph>      }</paragraph><paragraph>      loadS5JS();</paragraph><paragraph>    &lt;/script&gt; </paragraph></section></section>-->
+<!--      //- (1)-->
+   
+
+
+
+
+
+</body><!--   //- (0)--></html>
